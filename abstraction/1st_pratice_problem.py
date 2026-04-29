@@ -26,3 +26,38 @@
 #   Tweety says: Tweet! and flies with wings
 #   Nemo says: ...(blub) and swims with fins
 
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    def __init__(self, name):
+        self.name = name
+
+    @abstractmethod
+    def speak(self):
+        pass
+
+    @abstractmethod
+    def move(self):
+        pass
+
+    def describe(self):
+        print(f"{self.name} says : {self.speak()} and {self.move()}")
+
+class Dog(Animal):
+    def speak(self):
+        return "woof"
+    
+    def move(self):
+        return "runs on four legs"
+    
+class Bird(Animal):
+    def speak(self):
+        return "Tweet"
+    
+    def move(self):
+        return "files with wings"
+    
+animals = [Dog("Rex"), Bird("Ritik")]
+
+for a in animals:
+    a.describe()
