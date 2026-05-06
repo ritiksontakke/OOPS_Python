@@ -35,3 +35,37 @@
 #   Moo!
 #   Quack!
 # ============================================================
+
+class Animal :
+
+    def speak(self):
+        print("Some genric animal sound")
+    
+# overridding 
+
+class Dog(Animal):
+    def speak(self):
+        print("woof woof")
+
+class Cat(Animal):
+    def speak(self):
+        print("meow meow")
+
+class Cow(Animal):
+    def speak(self):
+        print("Moo!")
+
+
+class Duck(Animal):
+    def speak(self):
+        print("Quack!")
+
+
+# Function using polymorphism
+def make_noise(animal):
+    animal.speak()
+
+animals = [Dog(), Cat(), Cow(), Duck()]
+
+for a in animals:
+    make_noise(a)
